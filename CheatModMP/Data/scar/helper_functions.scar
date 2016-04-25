@@ -1,0 +1,104 @@
+function SGroup_to_GameID_Table(sg)
+	local t = {}
+	local count = SGroup_CountSpawned(sg)
+	for i = 1, count do
+		local squad = SGroup_GetSpawnedSquadAt(sg, i)
+		t[Squad_GetGameID(squad)] = true
+	end
+	table.setn(t, count)
+	return t
+end
+
+function EGroup_to_GameID_Table(eg)
+	local t = {}
+	local count = EGroup_CountSpawned(eg)
+	for i = 1, count do
+		local entity = EGroup_GetSpawnedEntityAt(eg, i)
+		t[Entity_GetGameID(entity)] = true
+	end
+	table.setn(t, count)
+	return t
+end
+
+function Table_Intersection(t1, t2)
+	local t = {}
+	for key, val in pairs(t1) do
+		if (t2[key] ~= nil) then
+			t[key] = val
+			table.setn(t, table.getn(t) + 1)
+		end	
+	end
+	return t
+end
+
+-- returns relative complement t1 - t2
+function Table_Complement(t1, t2)
+	local t = {}
+	for key, val in pairs(t1) do
+		if (t2[key] == nil) then
+			t[key] = val
+			table.setn(t, table.getn(t) + 1)
+		end	
+	end
+	return t
+end
+
+function Is_Blueprint_In_Table(blueprint, table)
+	for key, value in ipairs(table) do
+		if (value == blueprint) then
+			return true
+		end 
+	end
+	return false
+end
+
+function Table_Merge(table1, table2)
+	for i,v in ipairs(table2) do
+		table.insert(table1, v)
+	end
+end
+
+function LOC2(text)
+	local text2 = LOC(text)
+	text2[1] = text
+	return text2
+end
+
+function ClearText()
+	dr_clear("view")
+end
+
+function DisplayText(text, seconds)	
+	if (seconds == nil) then
+		seconds = 10
+	end
+	if (Rule_Exists(ClearText)) then
+		TimeRule_Remove(ClearText)
+		ClearText()	
+	end
+	dr_text2d("view", 0.01, 0.02, text, 0, 255, 0)
+	Rule_AddOneShot(ClearText, seconds)
+end
+
+-- returns blueprint name without full path name (so for instance "sbps\allies\infantry\engineer" becomes "engineer")
+function BP_GetName2(blueprint) 
+	local pathname = BP_GetName(blueprint)
+	local start = 0
+	local start2
+	local stop
+	local found = true
+	-- find last occurrence of "\" character in pathname string:
+	repeat 
+		start2, stop = string.find(pathname, "\\", start + 1)
+		if (start2 == nil) then
+			found = false
+		else
+			start = start2
+		end
+	until found == false
+	return string.sub(pathname, start + 1)
+end
+
+function Util_GetFacing(pos, heading)
+	return World_Pos(pos.x + 10 * heading.x, pos.y + 10 * heading.y, pos.z + 10 * heading.z)
+end

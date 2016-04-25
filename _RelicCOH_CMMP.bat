@@ -1,0 +1,1 @@
+RelicCOH.exe -mod CheatModMP -dev -nomovies

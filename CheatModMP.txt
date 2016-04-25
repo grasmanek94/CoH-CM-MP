@@ -1,0 +1,66 @@
+Cheat Mod *Multiplayer* v2.0 (for COH:OF and COH > v2.1 only!)
+
+Description:
+This mod is similar to the original Cheat Mod, except that it now also works in Multiplayer and Replays (without causing sync errors). However, the most important difference is that the HQ must be selected before any of the hotkeys will work. 
+
+Hotkey List:
+
+!!Important!!:: Select the HQ first (press F1), before using any of the hotkeys:
+
+Shift + Control + F1 = Display Hotkey list
+Shift + Control + F2 = Squad Hotkey List (of selected army)
+Shift + Control + F3 = Ability Hotkey List (of selected army)
+Shift + Control + F4 = Entity Hotkey List (of selected army)
+Shift + Control + F5 = Revert chosen Commander Tree
+Shift + F1 = Toggle FoW (fog of war)
+Shift + F2 = Toggle Taskbar
+Shift + F3 = Spawn all units of selected army
+Shift + F4 = Toggle Instant Production
+Shift + F5 = Toggle Instant Build
+Shift + F6 = Toggle Instant Ability Recharge
+Shift + F7 = Toggle AI
+Shift + F8 = Toggle Local AI
+Shift + F9 = Change Atmosphere / Weather
+Shift + F10 = Add Resources
+Shift + F11 = Revert chosen commander tree
+Shift + F12 = Toggle "Big Head" mode
+
+Shift + Spacebar = Change Selected Army
+
+Shift + Insert = Change squad owner
+Shift + Control + Insert = Change entity owner
+Shift + Delete = Kill squad (middle delete button only)
+Shift + Control + Delete = Kill entity
+Shift + \ = Toggle squad Auto Targeting
+Shift + Control + \ = Toggle entity Auto Targeting
+Shift + . = Toggle AI Lock squad
+Shift + Control + . = Toggle AI Lock entity
+Shift + ; = Increase Veterancy
+Shift + [ = Copy Squad
+Shift + Control + [ = Copy Entity
+Shift + - = Special Copy (for small objects, like trees, fences etc.)
+Shift + ] = Paste Squad
+Shift + Control + ] = Paste Entity
+
+Shift + [0-9], [A-Z] = Spawn Squads of selected army
+Shift + Control + [1-9], [A-Z] = Spawn Abilities of selected army
+Shift + Alt + [0-9], [A-Z] = Spawn Entities of selected army
+
+
+Installation Notes:
+- Make sure your game is fully patched.
+- If you have the .zip instead of the .exe installer:
+  - extract archive to Program Files\Company of Heroes
+  - right click RelicCOH.exe -> Send to Desktop (create shortcut)
+  - on the desktop right click the newly created shortcut -> Properties
+  - set Target as: [["D:\Program Files\Company of Heroes\RelicCOH.exe" -modname CheatModMP -nomovies]] (don't add the [[ and ]])
+  - click "OK"
+  - double click shortcut to play ;-)
+
+Enjoy!
+
+(for updates visit 1337coh.com)
+
+--BuckyBoy
+
+ 
